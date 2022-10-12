@@ -4,44 +4,83 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Iniciar Sesión</title>
-    <link type="image/png" sizes="32x32" rel="icon" href="./github-emoji.png">
-    <!-- <link rel="shortcut icon" href="./icons8-github-32.png" type="image/x-icon"> -->
-    <link rel="stylesheet" href="./styles.css"> <!-- Enlace a hoja de estilos CSS -->
+    <title>Signin Page | Alfredo Coreno</title>
+    <link rel="stylesheet" href="./style.css">
 </head>
 <body>
-    <header class="header"> <!-- clase padre: "header" -->
-        <div class="header__img">
-            <a href="https://github.com/fredo-code"><img src="./IMG/github-circle.png" alt="Logo de GitHub"></a><!-- logo de la página -->
+    <div class="image">
+        <div class="image-overlay">
         </div>
-    </header>
-    <main class="main__container">
-        <section class="login"> <!--seccion del fomrulario de inicio de sesión-->
-            <section class="login__container"> <!--contenedor de login-->
-                <h2>Inicia sesión</h2>
-                <fomr class="login__container--form"> <!--contenedor del formulario-->
-                    <input arialabel="Correo" type="text" class="input" placeholder="Correo"> <!--componenete "input" que podemos volver a utilizar-->
-                    <input arialabel="Contraseña" type="password" class="input" placeholder="Contraseña"> <!--input tipo contraseña-->
-                    <button class="button">Iniciar sesión</button>
-                    <div class="login__container--remember-me"><!--apartado de recuérdame-->
-                        <label>
-                            <input type="checkbox" name="" id="cbox1" value="cheackbox">Recuérdame
-                        </label>
-                        <a href="https://fredo-code.github.io/Proyecto_HTML-CSS/Pagina_inicio-sesion/index.html">Olvidé mi contraseña</a>
+    </div>
+    <div class="wrapper">
+        <div class="form-container">
+            <div class="slide-controls">
+                <input type="radio" name="slider" id="login" checked>
+                <input type="radio" name="slider" id="signup">
+                <label for="login" class="slide login">SIGN IN</label>
+                <label for="signup" class="slide signup">SIGN UP</label>
+                <div class="slide-tab"></div>
+            </div>
+            <div class="form-inner">
+                <form action="#" class="login">
+                    <div class="field">
+                        <p>USERNAME</p>
+                        <input type="text" required>
                     </div>
-                </fomr>
-                <section class="login__container--social-media"><!--clase de sección de enlace a redes sociales-->
-                    <div><img src="./IMG/google-icon.png" alt="Google">Inicia sesión con Google</div>
-                    <div><img src="./IMG/twitter-icon.png" alt="Twitter">Inicia sesión con Twitter</div>
-                </section>
-                <p class="login__container--register">No tienes ninguna cuenta <a href="./registrate.html">Regístrate</a></p>
-            </section>
-        </section>
-    </main>
-    <footer class="footer"><!--componente footer-->
-        <a href="https://fredo-code.github.io/Proyecto_HTML-CSS/Pagina_inicio-sesion/index.html">Términos de uso</a>
-        <a href="https://fredo-code.github.io/Proyecto_HTML-CSS/Pagina_inicio-sesion/index.html">Declaración de privacidad</a>
-        <a href="https://fredo-code.github.io/Proyecto_HTML-CSS/Pagina_inicio-sesion/index.html">Centro de ayuda</a>
-    </footer>
+                    <div class="field">
+                        <p>PASSWORD</p>
+                        <input type="password" required>
+                    </div>
+                    <div class="pass-link">
+                        <label>
+                            <input type="checkbox" name="" id="cbox1" value="checkbox">
+                            Keep me Signed in
+                        </label>
+                    </div>
+                    <div class="field">
+                        <input type="submit"  value="SIGN IN">
+                    </div>
+                    <div class="signup-link"><a href="#">Forgot Password?</a></div>
+                </form>
+                <form action="#" class="Signup">
+                    <div class="field">
+                        <p>USERNAME</p>
+                        <input type="text" required>
+                    </div>
+                    <div class="field">
+                        <p>E-MAIL</p>
+                        <input type="text" required>
+                    </div>
+                    <div class="field">
+                        <p>PASSWORD</p>
+                        <input type="password" required>
+                    </div>
+                    <div class="field">
+                        <input type="submit"  value="SIGN UP">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script>
+        const loginForm = document.querySelector("form.login");
+        const signupForm = document.querySelector("form.signup");
+        const loginBtn = document.querySelector("label.login");
+        const signupBtn = document.querySelector("label.signup");
+        const loginText = document.querySelector(".title-text .login");
+        const signupText = document.querySelector(".title-text .signup");
+        signupBtn.onclick = (() => {
+            loginForm.style.marginLeft = "-50%";
+            loginText.style.marginLeft = "-50%";
+        });
+        loginBtn.onclick = (() => {
+            loginForm.style.marginLeft = "0%";
+            loginText.style.marginLeft = "0%";
+        });
+        signupLink.onclick = (() => {
+            signupBtn.click();
+            return false;
+        });
+    </script>
 </body>
 </html>

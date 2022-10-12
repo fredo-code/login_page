@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+html, body {
+    display: grid;
+    height: 100%;
+    width: 100%;
+    place-items: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    background-image: linear-gradient(0deg, rgba(47, 60, 96, 0.8), rgba(47, 60, 96, 0.8)), url("./img/arco-calzada.jpg");
+}
+.wrapper {
+    overflow: hidden;
+    max-width: 390px;
+    padding: 30px;
+    border-radius: 20px;
+}
+.wrapper .form-container {
+    width: 100%;
+    overflow: hidden; 
+}
+.form-container .slide-controls {
+    display: flex;
+    position: relative;
+    height: 50px;
+    width: 100%;
+    overflow: hidden;
+    margin: 30px 0 10px 0;
+    justify-content: space-between;
+    border-radius: 25px;
+}
+.slide-controls .slide {
+    height: 100%;
+    width: 100%;
+    z-index: 1;
+    color: white;
+    font-size: 25px;
+    font-weight: 500;
+    text-align: center;
+    line-height: 48px;
+    cursor: pointer;
+    transition: all 0.6s ease;
+}
+.slide-controls .signup {
+    color: grey;
+}
+.slide-controls .slide-tab {
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    left: 0;
+    z-index: 0;
+    border-radius: 5px;
+    transition: all 0.6s cubic-bezier(0.68, -0.55,0.256,1.55);
+    background: #1161ee;
+}
+input[type="radio"] {
+    display: none;
+}
+
+#signup:checked ~ .slide-tab {
+    left: 50%;
+}
+#signup:checked ~ .signup {
+    color: white;
+    background-color: #1161ee;
+}
+#signup:checked ~ .login {
+    color: grey;
+}
+.form-container .form-inner {
+    display: flex;
+    width: 200%;
+}
+.form-container p {
+    text-align: start;
+}
+.form-container .form-inner form{
+    width: 50%;
+    transition: all 0.6s cubic-bezier(0.68, -0.55,0.256,1.55);
+}
+.form-inner form .field {
+    height: 50px;
+    width: 100%;
+    padding: 5px;
+    margin-top: 20px;
+    color: lightgrey;
+}
+.form-inner form .field input {
+    background: rgba(255, 255, 255, 0.20);
+    height: 100%;
+    width: 100%;
+    outline: none;
+    padding-left: 15px;
+    font-size: 17px;
+    border-radius: 25px;
+    border: 1px solid lightgrey;
+    border-bottom-width: 2px;
+    transition: all 0.4s ease;
+}
+.form-inner form .field input:focus { 
+    border-color: #1161ee;
+}
+.form-inner form .pass-link {
+    color: #fff;
+    font-weight: bold;
+    text-align: start;
+    margin-top: 30px;
+}
+.form-inner form .pass-link a,
+.form-inner form .signup-link a {
+    color: lightgrey;
+    text-decoration: none;
+}
+.form-inner form .signup-link {
+    text-align: center;
+    color: lightgrey;
+    margin-top: 30px;
+}
+.form-inner form .pass-link a:hover,
+.form-inner form .signup-link a:hover {
+    text-decoration: underline;
+    font-weight: bold;
+}
+form .field input[type="submit"] {
+    color: lightgrey;
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: 500;
+    padding-left: 0px;
+    border: none;
+    cursor: pointer;
+    background: #1161ee;
+}
